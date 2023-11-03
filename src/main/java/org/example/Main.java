@@ -36,12 +36,13 @@ public class Main {
         // Print the element corresponding to the Build Number text (without foreknowledge of the Build Number itself)
         WebElement element = driver.findElementByXPath("(//*[contains(@resource-id, 'android:id/summary')])[8]");
         String buildNumber = element.getAttribute("name");
-        System.out.println(buildNumber);
+        System.out.println("The Build Number is: " + buildNumber);
 
         // Compare the Capabilities version number with the number in the System Settings (to avoid hard-coding the Software version)
         String devicePlatformVersion = driver.getCapabilities().getCapability("platformVersion").toString();
         String androidVersionText = String.format("(//*[contains(@text,'%s')])",devicePlatformVersion);
         WebElement androidVersionNumber = driver.findElement(By.xpath(androidVersionText));
-        System.out.println(androidVersionNumber.getAttribute("name"));
+        String androidNumber = androidVersionNumber.getAttribute("name");
+        System.out.println("The Android Platform Version is: " + androidNumber);
     };
 };
