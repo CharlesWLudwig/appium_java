@@ -1,4 +1,4 @@
-# appium_java
+# appium_java - automate scrolling on a phone emulator
 
 Appium Inspector - version 2023.10.4
 
